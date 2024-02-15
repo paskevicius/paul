@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image with Buttons</title>
+    <style>
+        /* Style the buttons */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .toggle-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        /* Hide all images initially */
+        img {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <!-- Create four buttons -->
+        <button class="toggle-button" onclick="showHTML('htmlFrame')">Historical Federal Funds Rate</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame7')">Historical Median Housing Income</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame3')">Fixed 30yr Mortgage Rates</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame13')">Fixed 15yr Mortgage Rates</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame14')">Fixed 30yr vs 15yr Mortgage Rate Spread</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame2')">Fixed 30yr Mortgage Rates vs Federal Funds Rate</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame15')">30yr vs Fed Funds Spread</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame4')">Median Housing Prices - All Homes</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame5')">Median Housing Prices - Single Family Home</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame6')">Median Housing Prices - Condo</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame8')">Median Housing Prices - 1Bedroom</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame9')">Median Housing Prices - 2Bedroom</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame10')">Median Housing Prices - 3Bedroom</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame11')">Median Housing Prices - 4Bedroom</button>
+        <button class="toggle-button" onclick="showHTML('htmlFrame12')">Median Housing Prices - 5+Bedroom</button>
+
+    </div>
+    
+    <!-- Create an HTML iframe element -->
+    <iframe id="htmlFrame" src="Federal_Funds_Line_Chart.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+    <iframe id="htmlFrame2" src="Mortgage vs Interest.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+    <iframe id="htmlFrame3" src="30yr_MortgageRates_Chart.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+    <iframe id="htmlFrame4" src="ZVHI - AllHomes.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame5" src="ZVHI - SingleFamily.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame6" src="ZVHI - Condo.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame7" src="MedianHousingIncome.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame8" src="ZVHI - 1Bedroom.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame9" src="ZVHI - 2Bedroom.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame10" src="ZVHI - 3Bedroom.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame11" src="ZVHI - 4Bedroom.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame12" src="ZVHI - 5+Bedroom.html" style="display: none;" width="1900" height="800" frameborder="0"></iframe>
+    <iframe id="htmlFrame13" src="15yr_MortgageRates_Chart.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+    <iframe id="htmlFrame14" src="30yr_vs_15yr_Spread.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+    <iframe id="htmlFrame15" src="FedFunds_vs_30yrMortgage_Spread.html" style="display: none;" width="1900" height="600" frameborder="0"></iframe>
+
+    <!-- Create two images with unique IDs -->
+    <img id="image3" src="Yield Curve.png" alt="Image 3">
+    
+    <script>
+        var currentlyVisibleImageId = null;
+        var htmlFrame = document.getElementById('htmlFrame');
+        
+        // Function to show the HTML iframe
+        function showHTML(elementId) {
+            var element = document.getElementById(elementId);
+            
+            if (currentlyVisibleImageId !== null) {
+                // Hide the currently visible image, if any
+                var currentlyVisibleImage = document.getElementById(currentlyVisibleImageId);
+                currentlyVisibleImage.style.display = 'none';
+            }
+            
+            element.style.display = 'block';
+            currentlyVisibleImageId = elementId;
+        }
+    </script>
+</body>
+</html>

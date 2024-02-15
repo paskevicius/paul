@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Paskevicius</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .tab {
+    flex: 1;
+  }
+
+  .tab a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .tab a:hover {
+    background-color: #ddd;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<ul class="tabs">
+  <li class="tab"><a href="#about">About</a></li>
+  <li class="tab"><a href="#research">Research</a></li>
+  <li class="tab"><a href="#bookshelf">Paul's Bookcase</a></li>
+</ul>
+
+<div id="about" class="tab-content">
+  <h2>About</h2>
+  <p>This is the About section.</p>
+</div>
+
+<div id="research" class="tab-content" style="display:none;">
+  <h2>Research</h2>
+  <p>This is the Research section.</p>
+</div>
+
+<div id="bookshelf" class="tab-content" style="display:none;">
+    <h2>Paul's Bookcase</h2>
+    <p>This is the Bookcase section.</p>
+  </div>
+  
+
+<script>
+  // JavaScript to switch tabs
+  const tabs = document.querySelectorAll('.tab a');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      tabContents.forEach(content => {
+        if (content.id === targetId) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
