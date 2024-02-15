@@ -11,6 +11,27 @@
     padding: 0;
   }
 
+  .heading {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .heading h1 {
+    text-decoration: underline;
+    margin-bottom: 5px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .tabs-container {
+    padding-top: 0px;
+  }
+
   .tabs {
     display: flex;
     list-style-type: none;
@@ -43,30 +64,35 @@
 </head>
 <body>
 
-<ul class="tabs">
-  <li class="tab"><a href="#about">About</a></li>
-  <li class="tab"><a href="#research">Research</a></li>
-  <li class="tab"><a href="#bookshelf">Paul's Bookcase</a></li>
-</ul>
-
-<div id="about" class="tab-content">
-  <h2>About</h2>
-  <p>This is the About section.</p>
+<div class="heading">
+  <h1>Paul Paskevicius</h1>
+  <p class="sub-heading">On Finance, Blockchain and more</p>
 </div>
 
-<div id="research" class="tab-content" style="display:none;">
-  <h2>Research</h2>
-  <p>This is the Research section.</p>
-</div>
+<div class="tabs-container">
+  <ul class="tabs">
+    <li class="tab"><a href="#about">About</a></li>
+    <li class="tab"><a href="#research">Research</a></li>
+    <li class="tab"><a href="#bookshelf">Paul's Bookcase</a></li>
+  </ul>
 
-<div id="bookshelf" class="tab-content" style="display:none;">
-    <h2>Paul's Bookcase</h2>
-    <p>This is the Bookcase section.</p>
+  <div id="about" class="tab-content">
+    <h2>About</h2>
+    <p>This is the About section.</p>
   </div>
-  
+
+  <div id="research" class="tab-content" style="display:none;">
+    <h2>Research</h2>
+    <p>This is the Research section.</p>
+  </div>
+
+  <div id="bookshelf" class="tab-content" style="display:none;">
+      <h2>Paul's Bookcase</h2>
+      <p>This is the Bookcase section.</p>
+    </div>
+</div>
 
 <script>
-  // JavaScript to switch tabs
   const tabs = document.querySelectorAll('.tab a');
   const tabContents = document.querySelectorAll('.tab-content');
 
