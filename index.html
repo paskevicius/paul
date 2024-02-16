@@ -59,6 +59,40 @@
 
   .tab-content {
     padding: 20px;
+    margin-left: 275px;
+  }
+  /* This is the sidebar itself */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    padding: 10px;
+  }
+  /* These are the sidebar buttons themselves */
+  .sidebar button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+  }
+
+  .sidebar button:hover {
+    background-color: #ddd;
+  }
+  /* This is the content that is displayed once a sidebar is clicked */
+  .section {
+    margin-left: 250px;
+    margin-top: -200px; 
+  }
+  /* This is the content that is displayed once a sidebar is clicked that contains an image */
+  .section-image {
+    position: fixed;
+    top: 250px;
+    left: 900px;
   }
 </style>
 </head>
@@ -78,18 +112,60 @@
 
   <div id="about" class="tab-content">
     <h2>About</h2>
-    <p>This is the About section.</p>
+    <div class="sidebar">
+      <button onclick="showSection('section1')">Short Overview</button>
+      <button onclick="showSection('section2')">Early Life and Background</button>
+      <button onclick="showSection('section3')">Academic Achievements</button>
+      <button onclick="showSection('section4')">Work and Career</button>
+      <button onclick="showSection('section5')">Contact</button>
+    </div>
+    <div class="content">
+      <div id="section1" class="section">
+        <h3>Short Overview</h3>
+        <img src="assets/images/Bio Pic.jpg" alt="Profile Picture" width="300" height="400">
+          <div class="section-image">
+            <p>This is the content for Section 1.</p>
+          </div>
+      </div>
+      <div id="section2" class="section" style="display: none;">
+        <h3>Early Life and Background</h3>
+        <p>This is the content for Section 2.</p>
+      </div>
+      <div id="section3" class="section" style="display: none;">
+        <h3>Academic Achievements</h3>
+        <p>This is the content for Section 3.</p>
+      </div>
+      <div id="section4" class="section" style="display: none;">
+        <h3>Work and Career</h3>
+        <p>This is the content for Section 4.</p>
+      </div>
+      <div id="section5" class="section" style="display: none;">
+        <h3>Contact</h3>
+        <p>This is the content for Section 5.</p>
+      </div>
+    </div>
   </div>
 
   <div id="research" class="tab-content" style="display:none;">
     <h2>Research</h2>
+    <div class="sidebar">
+      <button onclick="showSection('section1')">Section 1</button>
+      <button onclick="showSection('section2')">Section 2</button>
+      <button onclick="showSection('section3')">Section 3</button>
+    </div>
     <p>This is the Research section.</p>
   </div>
-
+  
   <div id="bookshelf" class="tab-content" style="display:none;">
-      <h2>Paul's Bookcase</h2>
-      <p>This is the Bookcase section.</p>
+    <h2>Paul's Bookcase</h2>
+    <div class="sidebar">
+      <button onclick="showSection('section1')">Section 1</button>
+      <button onclick="showSection('section2')">Section 2</button>
+      <button onclick="showSection('section3')">Section 3</button>
     </div>
+    <p>This is the Bookcase section.</p>
+  </div>
+
 </div>
 
 <script>
@@ -109,6 +185,15 @@
       });
     });
   });
+
+  function showSection(sectionId) {
+    var sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+  }
+
 </script>
 
 </body>
