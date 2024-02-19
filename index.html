@@ -90,6 +90,14 @@
     margin-right: 200px;
 
   }
+
+  /* This is the content that is displayed once the tab Research or Paul's Bookcase is clicked */
+  .section2 {
+    margin-left: 250px;
+    margin-top: -130px; 
+    margin-right: 200px;
+
+  }
   /* This is the content that is displayed once a sidebar is clicked that contains an image */
   .section-image {
     position: fixed;
@@ -162,7 +170,6 @@
         <p>•	Vincentian Service Scholarship Cohort - Scholar</p>
         <p>•	Habitat for Humanity - Member</p>
       </div>
-
       <div id="section4" class="section" style="display: none;">
         <h3>Work and Career</h3>
         <p><strong>HFR Asset Management - Operations Analyst (2022-2024)</strong></p>
@@ -202,11 +209,44 @@
   <div id="research" class="tab-content" style="display:none;">
     <h2>Research</h2>
     <div class="sidebar">
-      <button onclick="showSection('section1')">Whitepapers</button>
-      <button onclick="showSection('section2')">Research Essays</button>
-      <button onclick="showSection('section3')">Frameworks</button>
+      <button onclick="showSection2('section1p2')">Whitepapers</button>
+      <button onclick="showSection2('section2p2')">Research Essays</button>
+      <button onclick="showSection2('section3p3')">Frameworks</button>
     </div>
-    <p>This is the Research section.</p>
+    <div class="content">
+      <div id="section1p2" class="section2">
+        <h3>Whitepapers</h3>
+        <p><strong>Enterprise Blockchain Litepaper</strong></p>
+        <p>Discover the revolutionary potential of enterprise blockchain solutions in this insightful litepaper. Offering a clear-eyed examination of its benefits, it illuminates how businesses can enhance security, transparency, and efficiency while fostering collaboration. Through real-world examples and practical insights, this litepaper is a great read for those seeking to stay ahead in the evolving landscape of modern business technology.</p>
+        <p><a href="assets/pdf//whitepapers/Enterprise Blockchain Litepaper.pdf" target="_blank">View Enterprise Blockchain Litepaper</a></p>
+      </div>
+
+      <div id="section2p2" class="section2" style="display: none;">
+        <h3>Research Essays</h3>
+        <p><strong>Wilbur-Ellis Innovation Award</strong></p>
+        <p>The Wilbur-Ellis Innovation Award is a competition of Universities who can propose the most creative idea for providing food for more people. Paul and a team of students from DePaul University and University of Missouri created an idea of using Asian Carp as an alternative and cheap food source that can be added to Tom Brown porridge to help combat malnutrition in countries like Africa.</p>
+        <p><a href="assets/pdf/research essays/Innovation Challenge - Trash for Some, Treasure to Others.pdf" target="_blank">View Innovation Challenge Report</a></p>
+        <p><strong>CFA Research Challenge</strong></p>
+        <p>The CFA Research Challenge is an annual competition of University students creating equity research reports on a specific stock. Below is the report that Paul and his team of DePaul students created for TransUnion, earning a third place finish for DePaul University at the local regional Chicago competition in 2020.</p>
+        <p><a href="assets/pdf/research essays/CFARC_TEAM_BENCHMARK_FINAL.pdf" target="_blank">View CFARC Final Report</a></p>
+      </div>
+
+      <div id="section3p3" class="section2" style="display: none;">
+        <h3>Frameworks</h3>
+        <p><strong>Benefit vs Constraint Framework</strong></p>
+        <p>This simple yet important framework was built by Paul while running Taiga. There were a lot of projects that required various amounts of time and this framework was created to help determine if a project was worth the time. If the amount of time gained, so the benefit, is greater than the amount of time lost, the constraint, then a project was worthwhile.</p>
+        <p><a href="assets/pdf/frameworks/Benefit vs Constraint Framework.pdf" target="_blank">View Benefit vs Constraint Framework</a></p>
+        <p><strong>Blockchain Coding Best Practices</strong></p>
+        <p>Specific to the ethers coding library, this framework discusses Paul's mot valuable lessons and best practices learned while building automated trading programs on various Ethereum dApps like Aave and Uniswap.</p>
+        <p><a href="assets/pdf/frameworks/Blockchain Coding Best Practices.pdf" target="_blank">View Blockchain Coding Best Practices</a></p>
+        <p><strong>Framework for Building Web Scrapers</strong></p>
+        <p>This framework highlights the most important factors and considerations when deciding whether a web scraper should be built for a certain process.</p>
+        <p><a href="assets/pdf/frameworks/Framework for Building Web Scrapers.pdf" target="_blank">View Framework for Building Web Scrapers</a></p>
+        <p><strong>Framework for Opening New DNL LP Positions</strong></p>
+        <p>This framework discusses the process of opening delta neutral liquidity pool positions. This was designed and implemented on v2 liquidity pools on Uniswap. The framework contains a step by step explanation of the model that Paul built to track key inputs and outputs for delta neutral positions.</p>
+        <p><a href="assets/pdf/frameworks/Framework for Opening DNL Positions - Capital.pdf" target="_blank">View Framework for Opening New DNL LP Positions</a></p>
+      </div>
+    </div>
   </div>
   
   <div id="bookshelf" class="tab-content" style="display:none;">
@@ -236,6 +276,14 @@
 
   function showSection(sectionId) {
     var sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+  }
+
+  function showSection2(sectionId) {
+    var sections = document.querySelectorAll('.section2');
     sections.forEach(section => {
       section.style.display = 'none';
     });
