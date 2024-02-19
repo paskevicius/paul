@@ -60,6 +60,7 @@
   .tab-content {
     padding: 20px;
     margin-left: 275px;
+    margin-right: 200px;
   }
   /* This is the sidebar itself */
   .sidebar {
@@ -105,6 +106,30 @@
     left: 900px;
     text-align: center;
     margin-right: 200px;
+  }
+  /* Everything below with "custom-table" is for the table under "Paul's bookcase"*/
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .custom-table th {
+    background-color: #f2f2f2;
+  }
+
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #f2f2f2;
   }
 </style>
 </head>
@@ -242,18 +267,30 @@
         <p><strong>Framework for Building Web Scrapers</strong></p>
         <p>This framework highlights the most important factors and considerations when deciding whether a web scraper should be built for a certain process.</p>
         <p><a href="assets/pdf/frameworks/Framework for Building Web Scrapers.pdf" target="_blank">View Framework for Building Web Scrapers</a></p>
-        <p><strong>Framework for Opening New DNL LP Positions</strong></p>
+        <p><strong>Framework for Opening New Delta Neutral LP Positions</strong></p>
         <p>This framework discusses the process of opening delta neutral liquidity pool positions. This was designed and implemented on v2 liquidity pools on Uniswap. The framework contains a step by step explanation of the model that Paul built to track key inputs and outputs for delta neutral positions.</p>
-        <p><a href="assets/pdf/frameworks/Framework for Opening DNL Positions - Capital.pdf" target="_blank">View Framework for Opening New DNL LP Positions</a></p>
+        <p><a href="assets/pdf/frameworks/Framework for Opening DNL Positions - Capital.pdf" target="_blank">View Framework for Opening New Delta Neutral LP Positions</a></p>
       </div>
     </div>
   </div>
   
   <div id="bookshelf" class="tab-content" style="display:none;">
     <h2>Paul's Bookcase</h2>
-    <p>This is the Bookcase section.</p>
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Subject</th>
+          <th>Status</th>
+          <th>Overall Rating</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
   </div>
-
 </div>
 
 <script>
@@ -291,6 +328,63 @@
   }
 
 </script>
+
+<!-- This is the CSV version of the table -->
+<script id="csv-template" type="text/csv">
+  Never Eat Alone,Keith Ferrazzi and Tahl Raz,Self-Help and Networking,In Progress,TBD,
+  The Innovator's DNA,Clayton Christensen Jeffy Dyer and Hal Gregersen,Innovation and Business,Completed,9/10,Great read and insight into the personalities that differentiates disruptive innovators from other business managers and executives.
+  Elon Musk,Walter Isaacson,Auto-Biography,Completed,8.5/10,Very insightful book into the life of Elon Musk and his ambition to change the world and preserve human consciousness through SpaceX/Tesla/Neuralink and his other ventures.
+  The Innovator's Dilemma,Clayton Christensen,Business/Innovation,Completed,9.5/10,Explores disruptive innovation and its impact on established industries.
+  Steve Jobs,Walter Isaacson,Biography,Completed,10/10,An intimate portrait of the iconic entrepreneur and visionary behind Apple Inc.
+  How to Win Friends and Influence People,Dale Carnegie,Self-Help/Communication,Completed,9/10,A timeless guide to interpersonal skills offering practical advice for building relationships and influencing others.
+  The Innovators,Walter Isaacson,Business/Technology,Completed,9/10,A comprehensive history of the digital revolution and the individuals who shaped it.
+  The Art of War,Sun Tzu,Philosophy/Military Strategy,Completed,6/10,A classic treatise on strategy and tactics offering timeless wisdom on leadership and conflict resolution.
+  Slicing Pie Handbook,Michael L. Moyer,Business/Entrepreneurship,Completed,9/10,Provides a fair and flexible model for splitting equity in startups promoting fairness and alignment among co-founders.
+  Principles for Dealing with the Changing World Order,Ray Dalio,Politics/International Relations,Completed,10/10,Insightful analysis of the current global landscape and strategies for navigating it effectively.
+  Principles: Life and Work, Ray Dalio, Business/Personal Development, Completed, 9.5/10, Offers insights into Ray Dalio's principles for success in life and work based on his experiences as an investor and entrepreneur.
+  Quantum Computing for Everyone,Chris Bernhardt,Quantum Computing,Completed,8/10,Accessible introduction to quantum computing concepts and their potential impact on various industries.
+  The Lean Startup,Eric Ries,Business/Entrepreneurship,Completed,10/10,Revolutionary approach to starting and managing startups emphasizing iterative development and validated learning.
+  The Everything Bubble: The Endgame for Central Bank Policy,Graham Summers,Economics/Finance,Completed,8/10,Examination of global economic trends and potential risks associated with asset bubbles in various markets.
+  The Devil's Financial Dictionary,Jason Zweig,Finance/Humor,Completed,6/10,Tongue-in-cheek exploration of financial jargon and concepts offering humorous yet insightful commentary on the industry.
+  So You Want to Start a Hedge Fund: Lessons for Managers and Allocators,Ted Seides,Finance/Investing,Completed,7/10,Practical advice and insights for both aspiring hedge fund managers and investors looking to allocate capital to hedge funds.
+  The Hedge Fund Book, Richard Wilson, Finance/Investing, Completed, 9/10, A comprehensive overview of hedge funds their strategies and their role in the financial markets.
+  Blockchain Development for Finance Project,Ishan Roy,Blockchain/Finance,Completed,9/10,Guide to blockchain development specifically tailored for finance projects.
+  Ethereum for Dummies,Unknown,Blockchain/Finance,Completed,8/10,A beginner-friendly introduction to Ethereum and its applications part of the 'For Dummies' series.
+  The Self-Taught Programmer,Cory Althoff,Programming,Completed,9/10,A comprehensive guide for self-learning programming skills.
+  Coding for Beginners,Elliot Davis,Programming,Completed,7/10,Introduction to coding concepts and programming languages.
+  Quantitative Trading: How to Build Your Own Algorithmic Trading Business,Ernest P. Chan,Finance/Investing,Completed,7/10,Comprehensive guide to quantitative trading strategies and building algorithmic trading systems.
+  The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution,Gregory Zuckerman,Finance/Investing,Completed,9/10,Biography of Jim Simons and the rise of Renaissance Technologies one of the most successful quantitative trading firms.
+  The Bitcoin Standard, Saifedean Ammous, Bitcoin/Economics, Completed, 9/10, Analysis of Bitcoin's role as a digital currency and its potential to reshape the global financial system.
+  DeFi and the Future of Finance,Ashwin Ramachandran and Joey Santoro and Campbell Harvey, Finance/Blockchain, Completed, 7/10, Examination of decentralized finance (DeFi) and its potential impact on the future of financial systems.
+  Crypto Revolution, Bryce Paul and Aaron Malone, Cryptocurrency/Finance, Completed, 5/10, Exploration of the transformative potential of blockchain technology and cryptocurrencies.
+  Cryptoassets, Chris Burniske and Jack Tatar, Cryptocurrency/Finance, Completed, 10/10, Comprehensive guide to understanding cryptocurrencies and their investment potential.
+  Superforecasting: The Art and Science of Prediction,Philip E. Tetlock and Dan Gardner,Psychology/Forecasting,Completed,9.5/10,Examines the methods and practices of superforecasters individuals skilled at making accurate predictions about future events.
+  Thinking Fast and Slow,Daniel Kahneman,Psychology/Behavioral Economics,Completed,10/10,Exploration of human decision-making processes highlighting the interplay between intuitive and rational thinking.
+  Best Practices for Equity Research Analysts,James J. Valentine,Finance/Investing,Completed,10/10,Insights and strategies for equity research analysts to improve their analytical skills and investment recommendations.
+  Risk Management in Trading, Davis Edwards, Trading/Risk Management, Completed, 8/10, Comprehensive guide to managing risks effectively in trading strategies.
+  Hot Commodities: How Anyone Can Invest Profitably in the World's Best Market,Jim Rogers,Finance/Investing,Completed,9.5/10,Insights into investing in commodities markets emphasizing long-term trends and global economic factors.
+  The Complete Guide to Option Selling,James Cordier and Michael Gross,Finance/Options,Completed,9/10,Comprehensive guide to the strategy of option selling covering risk management and market analysis.
+  Options Volatility and Pricing,Sheldon Natenberg,Finance/Options,Completed,9.5/10,In-depth exploration of options pricing models and volatility strategies.
+  Damodaran on Valuation,Aswath Damodaran,Finance/Valuation,Completed,8/10,Insights into valuation methods and principles by renowned finance professor Aswath Damodaran.
+  Security Analysis,Benjamin Graham,Finance/Investing,Completed,8.5/10,Comprehensive guide to investment analysis and valuation.
+  The Intelligent Investor,Benjamin Graham,Finance/Investing,Completed,9/10,Classic investment guide focusing on value investing principles and strategies for long-term success in the stock market.
+</script>
+  
+  <script>
+    const tableBody = document.getElementById('table-body');
+    const csvTemplate = document.getElementById('csv-template').textContent;
+    const rows = csvTemplate.trim().split('\n').map(row => row.split(','));
+  
+    rows.forEach(rowData => {
+      const row = document.createElement('tr');
+      rowData.forEach(cellData => {
+        const cell = document.createElement('td');
+        cell.textContent = cellData;
+        row.appendChild(cell);
+      });
+      tableBody.appendChild(row);
+    });
+  </script>
 
 </body>
 </html>
